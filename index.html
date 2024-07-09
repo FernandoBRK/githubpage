@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Automoviles BRK</title> <!-- Título de la página -->
+    <script src="https://kit.fontawesome.com/283335a286.js" crossorigin="anonymous"></script> <!-- Script para iconos de Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Establecimiento de conexión previa para Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Establecimiento de conexión previa para recursos de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Mulish:wght@400;700&display=swap"
+        rel="stylesheet"> <!-- Enlace a las fuentes Arima Madurai y Mulish desde Google Fonts -->
+    <link rel="stylesheet" href="css/normalize.css"> <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="css/estilos.css"> <!-- Hoja de estilos personalizada -->
+</head>
+
+<body>
+    <header class="encabezado" id="1"> <!-- Encabezado con clase 'encabezado' y ID '1' -->
+        <div class="contenedor-navegacion">
+            <div class="contenido-navegacion contenedor">
+                <div class="logo">
+                    <h2>Automoviles <span class="verde">B</span><span>R</span><span class="rojo">K</span></h2> <!-- Título del logo con estilos de colores -->
+                </div>
+                <nav class="navegacion ocultar"> <!-- Barra de navegación -->
+                    <a href="#1">Inicio</a>
+                    <a href="#2">Sobre Nosotros</a>
+                    <a href="#3">Galeria</a>
+                    <a href="#4">Servicios</a>
+                    <a href="#5">Contacto</a>
+                </nav>
+                <div class="hamburguesa"> <!-- Icono de hamburguesa para menú móvil -->
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        <div class="contenido-header"> <!-- Contenido del encabezado principal -->
+            <div class="contenedor-encabezado">
+                <div class="texto-encabezado">
+                    <h2>Pasión por los Motores</h2> <!-- Título principal -->
+                    <a href="#3" class="btn bordes">Nuestros Automoviles</a>  <!-- Botón de enlace a la galería de automóviles -->
+                </div>
+                <video autoplay loop muted> <!-- Video de fondo con autoplay, loop y sin sonido -->
+                    <source src="/assets/bg_video.mp4">  <!-- Fuente del video -->
+                </video>
+            </div>
+        </div>
+    </header>
+
+    <div class="contenedor-nosotros contenedor" id="2"> <!-- Contenedor principal de la sección Nosotros con clase 'contenedor-nosotros' y ID '2' -->
+        <div class="texto-nosotros">
+            <p class="bienvenida">Bienvenido a</p> <!-- Párrafo de bienvenida -->
+            <h1>Automoviles BRK</h1>  <!-- Título principal de la tienda -->
+            <p>Automoviles BRK es una tienda de automóviles que ofrece una amplia selección de vehículos nuevos y usados. Con un enfoque en la calidad y la satisfacción del cliente, proporciona un servicio de atención al cliente excepcional, financiamiento flexible y un equipo de expertos en ventas y mecánica para asegurar que cada cliente encuentre el automóvil perfecto para sus necesidades. Además, la tienda cuenta con un taller de servicio completo para mantenimiento y reparaciones, garantizando la durabilidad y el rendimiento de los vehículos.
+            </p>
+            <a href="#5" class="btn btn-rojo">Contactar</a> <!-- Enlace para contactar -->
+        </div>
+        <div class="imagenes-nosotros"> <!-- División para las imágenes relacionadas -->
+            <div class="imagen1"> <!-- Primera imagen -->
+                <img data-src="assets/img/nosotros1.jpg" alt="mujer comiendo pizza"> <!-- Etiqueta de imagen con atributo de datos diferido -->
+            </div>
+            <div class="imagenes2">  <!-- División para las siguientes imágenes -->
+                <img data-src="assets/img/nosotros2.jpg" alt="mujeres comiendo pizza">
+                <img data-src="assets/img/nosotros3.jpg" alt="plato con pasta">
+            </div>
+        </div>
+    </div>
+
+    <section class="menu contenedor" id="3"> <!-- Sección del menú de automóviles con clase 'menu' y ID '3' -->
+        <h2 class="texto-platillos">Automoviles Populares</h2> <!-- Título principal de la sección -->
+        <div class="botones-platillos">
+            <!-- Botones de categorías de automóviles -->
+            <button class="todos btn btn-verde">Todos</button>
+            <button class="ensaladas btn btn-verde">Bugatti</button>
+            <button class="pasta btn btn-verde">Lamborghini</button>
+            <button class="pizza btn btn-verde">Audi</button>
+            <button class="postres btn btn-verde">Ferrari</button>
+        </div>
+        <div class="platillos">
+            <!-- Contenedor de los diferentes modelos de automóviles -->
+            <div class="platillo" data-platillo="ensalada"> <!-- Modelo de automóvil Bugatti -->
+                <img data-src="assets/img/Bugatti1.jpg" alt="ensalada"> <!-- Imagen del automóvil -->
+                <h2>Bugatti 1</h2> <!-- Título del modelo -->
+                <p>Caracteristicas de la foto</p> <!-- Descripción del modelo -->
+                <div class="precio"> <!-- Precio del modelo -->
+                    <p>$40.0</p> <!-- Etiqueta de precio -->
+                    <button><i class="fas fa-shopping-basket"></i></button> <!-- Botón de compra -->
+                </div>
+            </div>
+            <!-- Repetición similar para otros modelos de automóviles -->
+            <div class="platillo" data-platillo="ensalada">
+                <img data-src="assets/img/Bugatti2.jpg" alt="ensalada">
+                <h2>Bugatti 2</h2>
+                <p>Caracteristicas de la foto</p>
+                <div class="precio">
+                    <p>$40.0</p>
+                    <button><i class="fas fa-shopping-basket"></i></button>
+                </div>
+            </div>
+            <div class="platillo" data-platillo="ensalada">
+                <img data-src="assets/img/bugatti3.jpg" alt="ensalada">
+                <h2>Bugatti 3</h2>
+                <p>Caracteristicas de la foto</p>
+                <div class="precio">
+                    <p>$40.0</p>
+                    <button><i class="fas fa-shopping-basket"></i></button>
+                </div>
+            </div>
+            <!-- Repetición similar para otros modelos de automóviles -->
+            <div class="platillo" data-platillo="pasta">
+                <img data-src="assets/img/lambo1.jpg" alt="pasta">
+                <h2>Lamborghini 1</h2>
+                <p>Caracteristicas de la foto</p>
+                <div class="precio">
+                    <p>$40.0</p>
+                    <button><i class="fas fa-shopping-basket"></i></button>
+                </div>
+            </div>
+            <div class="platillo" data-platillo="pasta">
+                <img data-src="assets/img/lambo2.jpg" alt="pasta">
+                <h2>Lamborghini 2</h2>
+                <p>Caracteristicas de la foto</p>
+                <div class="precio">
+                    <p>$40.0</p>
+                    <button><i class="fas fa-shopping-basket"></i></button>
+                </div>
+            </div>
+            <div class="platillo" data-platillo="pasta">
+                <img data-src="assets/img/lambo3.jpg" alt="pasta">
+                <h2>Lamborghini 3</h2>
+                <p>Caracteristicas de la foto</p>
+                <div class="precio">
+                    <p>$40.0</p>
+                    <button><i class="fas fa-shopping-basket"></i></button>
+                </div>
+            </div>
+            <!-- Repetición similar para otros modelos de automóviles -->
+            <div class="platillo" data-platillo="pizza">
+                <img data-src="assets/img/audi1.jpg" alt="pizza">
+                <h2>Audi 1</h2>
+                <p>Caracteristicas de la foto</p>
+                <div class="precio">
+                    <p>$40.0</p>
+                    <button><i class="fas fa-shopping-basket"></i></button>
+                </div>
+            </div>
+            <div class="platillo" data-platillo="pizza">
+                <img data-src="assets/img/audi2.jpg" alt="pizza">
+                <h2>Audi 2</h2>
+                <p>Caracteristicas de la foto</p>
+                <div class="precio">
+                    <p>$40.0</p>
+                    <button><i class="fas fa-shopping-basket"></i></button>
+                </div>
+            </div>
+            <div class="platillo" data-platillo="pizza">
+                <img data-src="assets/img/audi3.jpg" alt="pizza">
+                <h2>Audi 3</h2>
+                <p>Caracteristicas de la foto</p>
+                <div class="precio">
+                    <p>$40.0</p>
+                    <button><i class="fas fa-shopping-basket"></i></button>
+                </div>
+            </div>
+            <!-- Repetición similar para otros modelos de automóviles -->
+            <div class="platillo" data-platillo="postre">
+                <img data-src="assets/img/ferrari1.jpg" alt="postre">
+                <h2>Ferrari 1</h2>
+                <p>Caracteristicas de la foto</p>
+                <div class="precio">
+                    <p>$40.0</p>
+                    <button><i class="fas fa-shopping-basket"></i></button>
+                </div>
+            </div>
+            <div class="platillo" data-platillo="postre">
+                <img data-src="assets/img/ferrari2.jpg" alt="postre">
+                <h2>Ferrari 2</h2>
+                <p>Caracteristicas de la foto</p>
+                <div class="precio">
+                    <p>$40.0</p>
+                    <button><i class="fas fa-shopping-basket"></i></button>
+                </div>
+            </div>
+            <div class="platillo" data-platillo="postre">
+                <img data-src="assets/img/ferrari3.jpg" alt="postre">
+                <h2>Ferrari 3</h2>
+                <p>Caracteristicas de la foto</p>
+                <div class="precio">
+                    <p>$40.0</p>
+                    <button><i class="fas fa-shopping-basket"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="separador"> <!-- División para un separador en la página -->
+        <div class="contenido-separador contenedor"> <!-- Contenido del separador dentro de un contenedor -->
+            <h2>Ofertas exclusivas por hoy</h2> <!-- Título de las ofertas -->
+            <p>Ten el carro de tus sueños ya!!!!!!</p>  <!-- Texto promocional -->
+            <a href="#" class="btn btn-verde">Ordenar ahora</a> <!-- Botón de llamada a la acción -->
+        </div>
+    </div>
+
+    <section class="chef contenedor" id="4">
+        <!-- Sección dedicada a los servicios con clase 'contenedor' y ID '4' -->
+        <h2>Servicios</h2> <!-- Título de la sección -->
+        <div class="contenido-chef">
+            <div class="texto-chef">
+                <!-- División para el texto descriptivo -->
+                 <!-- Subtítulo informativo -->
+                <h3>Tienda de automóviles dedicada a ofrecer vehículos de calidad, servicio excepcional y soluciones de financiamiento accesibles, con un equipo de expertos comprometidos con la satisfacción del cliente.
+                </h3>
+                <!-- Párrafo descriptivo -->
+                <p>Automoviles BRK, abrió sus puertas con la misión de ofrecer vehículos de calidad y un servicio excepcional. A medida que crecía, se convirtió en un referente del sector automotriz local, conocido por su compromiso con los clientes. Hoy, sigue evolucionando y buscando nuevas formas de mejorar...</p>
+                <a href="#" class="btn btn-verde">Leer Servicios</a> <!-- Enlace -->
+            </div>
+            <div class="imagen-chef"> <!-- División para la imagen asociada -->
+                <img data-src="/assets/img/dueño.jpg" alt="fotografia del chef"> <!-- Imagen -->
+            </div>
+        </div>
+    </section>
+
+    <div class="formulario-contacto contenedor">
+        <!-- División para el formulario de contacto con clase 'formulario-contacto' y clase 'contenedor' -->
+        <div class="informacion-contacto">
+            <!-- Sección de información de contacto -->
+            <h3>Contactanos</h3> <!-- Título de la sección -->
+            <p><i class="fas fa-map-marker-alt"></i>Plaza Constitución</p>  <!-- Dirección -->
+            <p><i class="fas fa-envelope"></i> brkhuancayo@gmai.com</p> <!-- Correo electrónico -->
+            <p><i class="fas fa-phone-alt"></i>+51 923410921</p> <!-- Número de teléfono -->
+            <div class="redes-sociales">
+                <!-- Iconos de redes sociales -->
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+
+        <form class="formulario"> <!-- Formulario de contacto -->
+            <div class="input-formulario"> <!-- Campos de entrada del formulario -->
+                <label for="nombre">Nombre</label> <!-- Etiqueta para el campo Nombre -->
+                <input type="text" placeholder="Pedro" id="nombre"> <!-- Campo de entrada para el nombre -->
+            </div>
+            <!-- Se repite en cada campo -->
+            <div class="input-formulario">
+                <label for="apellidos">Apellido</label>
+                <input type="text" placeholder="Pedro" id="apellidos">
+            </div>
+            <div class="input-formulario">
+                <label for="correo">Correo</label>
+                <input type="email" placeholder="ejemplo@ejemplo.com" id="correo">
+            </div>
+            <div class="input-formulario">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" placeholder="+90 543 779 9410" id="telefono">
+            </div>
+            <div class="input-formulario">
+                <label for="mensaje">Mensaje</label>
+                <textarea></textarea>
+            </div>
+            <div class="btn-formulario">
+                <input type="submit" class="btn btn-verde" value="Enviar">
+                <!-- Botón de envío del formulario -->
+            </div>
+        </form>
+    </div>
+
+    <div class="pie-pagina "> <!-- División para el pie de página -->
+        <div class="contenedor-piepagina contenedor">
+             <!-- Contenedor principal del pie de página con clase 'contenedor-piepagina' y clase 'contenedor' -->
+            <div class="info"> <!-- Sección de información -->
+                <h3>Dirección</h3> <!-- Título de dirección -->
+                <p>Plaza Constitución</p> <!-- Dirección -->
+            </div>
+            <div class="info">
+                <h3>Días especiales</h3>
+                <p>Sabados y Domingos 7am - 1pm</p>
+                <p>+ 51 9123410921</p>
+            </div>
+            <div class="info">
+                <h3>Horarios</h3>
+                <p>Lunes - Domingo 7am - 9pm</p>
+                 <!-- Iconos de redes sociales -->
+                <div class="redes-sociales redes-pie">
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+            <div class="info"> <!-- Sección de noticias -->
+                <h3>Noticias</h3>
+                <p>suscribete para recibir más noticias</p>
+                <input type="email" placeholder="Tu correo"> <!-- Campo de entrada para correo electrónico -->
+                <input type="submit" class="btn btn-verde" value="Suscribirse"> <!-- Botón de suscripción -->
+            </div>
+        </div>
+    </div>
+    <footer class="footer" id="5"> <!-- Pie de página con clase 'footer' y ID '5' -->
+        <p>Todos los derechos reservados &copy; 2024 Automoviles BRK, desarrollado por Anonimo</p>
+    </footer>
+    <script src="js/app.js"></script> <!-- Script JavaScript -->
+
+</body>
+
+</html>

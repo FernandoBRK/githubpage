@@ -1,0 +1,553 @@
+:root{
+    --verde:#00A149; /* Colores*/
+    --blanco:#fff;
+    --rojo:#881014;
+    --oscuro:#000;
+    --titulos:'Arima Madurai',cursive; /* Fuente para títulos */
+    --parrafos:'Mulish', sans-serif; /* Fuente para párrafos */
+}
+/* Estilos para el documento */
+html{
+    box-sizing: border-box;  /* Modelo de caja para incluir bordes y padding en el tamaño total */
+    /*1rem = 10px*/
+    font-size: 62.5%;  /* Tamaño base de fuente equivalente a 10px para facilitar cálculos */
+}
+body{
+    font-size: 1.6rem;  /* Tamaño de fuente base de 16px */
+    overflow-x: hidden; /* Ocultar la barra de desplazamiento horizontal */
+}
+
+*,*::after, *::before{
+    box-sizing: inherit;  /* Heredar el modelo de caja desde el elemento html */
+}
+/*globales*/
+.contenedor{
+    max-width: 120rem; /* Ancho máximo del contenedor */
+    margin: 0 auto;  /* Centrar el contenedor horizontalmente con márgenes automáticos */
+    width: 95%;  /* Centrar el contenedor horizontalmente con márgenes automáticos */
+}
+
+/* Estilos de fuentes */
+h1,h2{
+    font-family: var(--titulos); /* Aplicar la fuente definida para títulos */
+}
+h3, p, a{
+    font-family: var(--parrafos); /* Aplicar la fuente definida para párrafos, enlaces y otros textos */
+}
+
+img{
+    max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor padre */
+}
+.verde{
+    color: var(--verde); /* Color de texto verde */
+}
+.rojo{
+    color: var(--rojo); /* Color de texto rojo */
+}
+.ocultar{
+    display: none;  /* Oculta el elemento al establecer su display como none */
+}
+/* Estilos para botón de cerrar */
+.btn-cerrar{
+    font-size: 3rem;         /* Tamaño de fuente grande */
+    font-weight: bold;       /* Texto en negrita */
+    color: var(--blanco);    /* Color de texto blanco */
+    position: absolute;      /* Posición absoluta con respecto al primer ancestro con posición establecida */
+    top: 0;                  /* Ubicación en la parte superior del contenedor padre */
+    right: 50px;             /* Ubicación 50px desde el borde derecho del contenedor padre */
+    user-select: none;       /* Evitar la selección de texto por parte del usuario */
+
+}
+.pantalla-completa{
+    position: absolute;                         /* Posición absoluta para ocupar toda la pantalla */
+    top: 0;                                     /* Borde superior de la pantalla */
+    left: 0;                                    /* Borde izquierdo de la pantalla */
+    bottom: 0;                                  /* Borde inferior de la pantalla */
+    right: 0;                                   /* Borde derecho de la pantalla */
+    background-color: rgba(0, 0, 0, 0.5);     /* Fondo semi-transparente negro */
+    z-index: 4;                                 /* Capa z-index para estar encima de otros elementos */
+}
+
+/* Animación de desplazamiento */
+@keyframes desplazamiento {
+    0%{
+        transform: translateX(100%);        /* Iniciar fuera del viewport hacia la derecha */
+    }
+
+    100%{
+        transform:translateX(0);     /* Desplazar hacia la posición original */
+    }
+}
+
+.btn-cerrar:hover{
+    cursor: pointer;    /* Cambiar cursor a puntero al pasar el mouse sobre el botón */
+}
+
+/* Estilos para botones en general */
+.btn {
+    text-decoration: none;            /* Quitar subrayado predeterminado de los enlaces */
+    color: var(--blanco);             /* Color de texto blanco */
+    font-size: 2rem;                  /* Tamaño de fuente */
+    text-transform: capitalize;       /* Convertir texto a mayúsculas la primera letra de cada palabra */
+    padding: 1rem 5rem;               /* Relleno interior del botón */
+    border-radius: 5px;               /* Borde redondeado */
+    transition: all .3s ease-in-out;  /* Transición suave para todos los cambios */
+}
+
+@media(min-width: 768px) {
+    .btn{
+        font-size: 2.2rem; /* Ajustar el tamaño de la fuente de los botones para pantallas más grandes */
+    }
+}
+.bordes{
+    border: 3px solid var(--blanco); /* Borde de 3px de color blanco */
+}
+@media(min-width: 768px) {
+    .bordes{
+        border: 4px solid var(--blanco);  /* Borde de 4px de color blanco para pantallas más grandes */
+    }
+}
+
+.bordes:hover{
+    color: var(--verde); /* Cambiar el color del texto a verde al pasar el ratón */
+    background-color: var(--blanco);   /* Cambiar el color de fondo a blanco al pasar el ratón */
+}
+.btn-rojo{ /* Botón rojo */
+    background-color: var(--rojo); /* Fondo rojo */
+    font-weight: bold; /* Texto en negrita */
+    display: inline-block; /* Mostrar como un bloque en línea */
+    margin-top: 2rem; /* Margen superior de 2rem */
+    margin-bottom: 2rem;
+}
+.btn-verde{ /* Botón verde */
+    background-color: var(--verde);
+    border: none;
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-family: var(--parrafos);
+}
+.btn-verde:hover{
+    background-color: var(--rojo); /* Cambiar fondo a rojo al pasar el ratón */
+}
+/*encabezado*/
+.contenedor-navegacion{
+    background-color: var(--oscuro); /* Fondo oscuro */
+    position: relative; /* Posición relativa */
+    z-index: 5; /* Nivel de apilamiento */
+  
+}
+.contenido-navegacion{
+    display: flex; /* Usar flexbox */
+    align-items: center; /* Alinear al centro verticalmente */
+    justify-content: space-between; /* Espacio entre elementos */
+    
+   
+}
+.logo h2, .navegacion a {
+  color: var(--blanco);   /* Color blanco para texto */
+}
+.logo h2{
+    font-size: 3rem; /* Tamaño de fuente */
+}
+.navegacion a{
+    text-decoration: none; /* Sin subrayado */
+    font-size: 2.2rem; /* Tamaño de fuente */
+    padding: 1.5rem; /* Relleno */
+    padding-left: 4rem;
+    display: block;
+    transition: color .3s ease-in-out;
+    text-align: center; /* Texto centrado */
+}
+
+@media(min-width: 768px) {
+    .navegacion a{
+        text-align: left; /* Alinear texto a la izquierda en pantallas más grandes */
+    }
+}
+
+
+.navegacion a:nth-child(even):hover{
+    color: var(--rojo); /* Cambiar color a rojo al pasar el ratón sobre enlaces pares */
+}
+.navegacion a:nth-child(odd):hover{
+    color: var(--verde); /* Cambiar color a verde al pasar el ratón sobre enlaces impares */
+}
+.navegacion a:first-of-type{
+    margin-top: 5rem; /* Margen superior para el primer enlace */
+}
+.navegacion{
+    position: absolute; /* Posición absoluta */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 40rem;
+    padding: 3rem 4rem;
+    background-color: var(--oscuro);  /* Fondo oscuro */
+    animation: desplazamiento .5s ease-in-out; /* Animación de desplazamiento */
+}
+
+.hamburguesa:hover{
+    cursor: pointer; /* Cambiar cursor a puntero al pasar el ratón */
+}
+
+.hamburguesa span{
+    background-color: var(--blanco); /* Fondo blanco */
+    display: block;  /* Mostrar como bloque */
+    width: 5rem; /* Ancho */
+    height: .5rem; /* Alto */
+    margin-bottom: .5rem; /* Margen inferior */
+}
+
+/*video*/
+.contenido-header{
+    position: relative;
+}
+
+.contenido-header::before{
+    content: ''; /* Contenido vacío */
+    position: absolute; /* Posición absoluta */
+    top:0; /* Borde superior */
+    left: 0; /* Borde izquierdo */
+    right: 0; /* Borde derecho */
+    bottom: 0; /* Borde inferior */
+    background-color: rgba(0,0,0,.5); /* Fondo semi-transparente negro */
+}
+
+.texto-encabezado{
+    position: absolute; /* Posición absoluta */
+    z-index: 2; /* Nivel de apilamiento */
+    width: 100%; /* Ancho completo */
+    height: 80%; /* Altura del 80% */
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Dirección de columna */
+    align-items: center; /* Alinear al centro */
+    justify-content: center; /* Justificar al centro */
+}
+.texto-encabezado h2{
+    color: var(--blanco); /* Color blanco */
+    font-size: 4rem; /* Tamaño de fuente */
+}
+
+@media(min-width: 768px) {
+    .texto-encabezado h2{
+        font-size: 8rem; /* Tamaño de fuente mayor en pantallas más grandes */
+    }
+}
+
+video{
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+}
+
+/*sobre nosotros*/
+.contenedor-nosotros{
+    
+    padding-top: 5rem; /* Relleno superior */
+}
+@media(min-width: 768px) {
+    .contenedor-nosotros{
+        display: flex; /* Usar flexbox */
+        justify-content: space-between; /* Espacio entre elementos */
+    }   
+}
+.texto-nosotros, .imagenes-nosotros{
+   
+    flex: 0 0 calc(50% - 1rem) ;
+}
+.texto-nosotros .bienvenida{
+    font-size: 4rem; /* Tamaño de fuente */
+    color: var(--verde); /* Color verde */
+    text-align: center; /* Texto centrado */
+}
+@media(min-width: 768px) {
+    .texto-nosotros .bienvenida{
+        text-align: left; text-align: left; /* Alinear texto a la izquierda en pantallas más grandes */
+    }
+}
+.texto-nosotros h1{
+    font-size: 5rem; /* Tamaño de fuente */
+    text-align: center; /* Texto centrado */
+}
+@media(min-width: 768px) {
+    .texto-nosotros h1{
+        text-align: left; /* Alinear texto a la izquierda en pantallas más grandes */
+    }
+}
+.texto-nosotros p{
+    font-size: 2rem; /* Tamaño de fuente */
+    text-align: center; /* Texto centrado */
+}
+@media(min-width: 768px) {
+    .texto-nosotros p{
+        text-align: left;
+    }
+}
+.imagenes-nosotros{
+    display: flex;
+    justify-content: space-between; 
+}
+.imagenes-nosotros img{
+    border-radius: 5px; /* Bordes redondeados */
+}
+.imagen1, .imagenes2{
+    flex: 0 0 calc(50% - 1rem);
+}
+.imagenes2 img{
+    margin-bottom: 1rem;
+}
+.menu{
+    padding-top: 4rem;
+}
+/*platillos*/ /* Sección de platillos */
+.texto-platillos{
+    text-align: center; /* Texto centrado */
+    font-size: 5rem; /* Tamaño de fuente */
+}
+
+.botones-platillos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.botones-platillos button{
+    flex: 0 0 calc(50% - 1rem);
+    padding: 1rem 3rem;
+}
+@media(min-width: 768px) {
+    .botones-platillos{
+        display: inline-block;
+    }
+    .botones-platillos button{
+        flex: unset;
+    }
+}
+@media(min-width: 768px) {
+    .platillos {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    .platillo {
+        flex: 0 0 calc(33.3% - 1rem);
+        border: 1px solid #e1e1e1;
+        padding: 2rem;
+        border-radius: 5px;
+    }
+    
+    .platillo img {
+        width: 100%;
+        height: 200px; /* Establece una altura fija */
+        object-fit: cover; /* Asegura que la imagen cubra el área establecida sin distorsión */
+    }
+    
+    .platillo h2 {
+        text-align: center;
+    }
+    
+    .platillo p {
+        font-size: 1.8rem;
+    }
+}
+.precio button{ /* Estilos para el botón dentro de la clase .precio */
+    padding:1rem; /* Relleno interno del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    border: none; /* Sin borde */
+    background-color: var(--rojo); /* Fondo rojo */
+    color: var(--blanco); /* Color de texto blanco */
+    height: 3.8rem; /* Altura del botón */
+}
+.separador{ /* Separador con imagen de fondo */
+    background-image: url('../assets/img/fondo.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Tamaño de la imagen */
+    background-position: center center; /* Posición de la imagen */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    position: relative; /* Posición relativa */
+    z-index: 2; /* Nivel de apilamiento */
+}
+.separador::before{
+    content: ''; /* Contenido vacío generado */
+    position: absolute; /* Posición absoluta */
+    top: 0; /* Borde superior */
+    right: 0; /* Borde derecho */
+    left: 0; /* Borde izquierdo */
+    bottom: 0; /* Borde inferior */
+    background-color: rgba(0,0,0,.5); /* Fondo negro semi-transparente */
+    z-index: -1; /* Nivel de apilamiento detrás del contenido */
+}
+/* Contenido dentro del separador */
+.contenido-separador{
+    padding: 5rem;  /* Relleno interno */
+}
+
+.contenido-separador h2{
+    font-size: 4rem; /* Tamaño de fuente */
+    color: var(--blanco); /* Color de texto blanco */
+    text-align: center; /* Texto centrado */
+}
+@media(min-width: 768px) {
+    .contenido-separador h2{
+        text-align: left;
+        font-size: 5rem;
+        color: var(--blanco);
+    }
+}
+.contenido-separador p{
+    color: var(--blanco); /* Color de texto blanco */
+    font-size: 3rem; /* Tamaño de fuente */
+    text-align: center; /* Texto centrado */
+}
+@media(min-width: 768px) {
+    .contenido-separador p{
+        text-align: left;
+    }
+}
+
+/*seccion del chef*/
+.chef h2{
+    background-color: var(--rojo); /* Fondo rojo */
+    display: inline-block; /* Mostrar como bloque en línea */
+    padding: 1rem 3rem; /* Relleno interno */
+    color: var(--blanco); /* Color de texto blanco */
+    font-size: 4rem; /* Tamaño de fuente */
+}
+@media(min-width: 768px) {
+    .contenido-chef{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.texto-chef, .imagen-chef{
+    flex: 0 0 calc(50% - 1rem);
+}
+.texto-chef h3{
+    font-size: 3rem;
+
+}
+.texto-chef p{
+    font-size: 2rem;
+    
+}
+.formulario-contacto{
+    padding-top: 5rem;
+}
+/*formulario contacto*/
+@media(min-width: 768px) {
+    .formulario-contacto{
+        display: flex;
+    }
+}
+.informacion-contacto{
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Dirección de columna */
+    justify-content: center; /* Justificar contenido al centro */
+    align-items: center; /* Alinear elementos al centro */
+}
+
+.informacion-contacto, .formulario{
+    flex: 0 0 calc(50% - 1rem);
+}
+.informacion-contacto{
+    background-color: var(--oscuro);
+    padding: 2rem;
+}
+
+.informacion-contacto h3, .informacion-contacto p, .redes-sociales i{
+    color: var(--blanco);
+}
+.informacion-contacto h3{
+    font-size: 4rem;
+    font-family: var(--titulos);
+}
+
+.informacion-contacto p{
+    font-size: 2.2rem;
+  
+}
+.informacion-contacto i{
+    margin-right: 1rem;
+}
+
+.redes-sociales{
+    font-size: 3rem;
+}
+
+.formulario{
+    padding: 5rem;
+}
+
+.input-formulario label{
+    display: block; /* Mostrar como bloque */
+    font-size: 2rem; /* Tamaño de fuente */
+    font-family: var(--parrafos); /* Fuente para párrafos */
+    margin-bottom: 1.5rem; /* Margen inferior */
+}
+
+.input-formulario input, .input-formulario textarea{
+    width: 100%;
+}
+.input-formulario input, .input-formulario textarea{
+    padding: 1rem 1.6rem; /* Relleno interno */
+    border: 1px solid #e1e1e1; /* Borde de 1px sólido */
+    border-radius: 5px; /* Bordes redondeados */
+    outline: none; /* Sin contorno al enfocar */
+    font-family: var(--parrafos); /* Fuente para párrafos */
+}
+.input-formulario textarea{
+    height: 20rem;
+    resize:none;
+}
+
+.pie-pagina{
+    margin-top: 5rem; /* Margen superior */
+    background-color: rgb(20,20,20); /* Fondo oscuro */
+    padding: 5rem; /* Relleno interno */
+}
+@media(min-width:768px){
+    .contenedor-piepagina{
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+.info{
+    flex: 0 0 calc(25% - 1rem);
+    margin-bottom: 2rem;
+}
+.info h3, .info p{
+    color: var(--blanco);
+    text-align: center;
+}
+.info h3{
+    font-size: 2.2rem;
+}
+.info p{
+    font-size: 1.8rem;
+}
+
+.redes-pie{
+    text-align: center;
+}
+.info input[type="email"]{
+    font-family: var(--parrafos); /* Fuente para párrafos */
+    display: inline-block; /* Mostrar como bloque en línea */
+    margin-bottom: 1rem; /* Margen inferior */
+    padding: 1rem; /* Relleno interno */
+    border-radius: 5px; /* Bordes redondeados */
+    outline: none; /* Sin contorno al enfocar */
+    width: 100%; /* Ancho completo */
+}
+
+.info input[type="submit"]{
+    padding: .5rem 2rem; /* Relleno interno */
+    font-size: 1.8rem; /* Tamaño de fuente */
+    border-radius: 0; /* Bordes sin redondear */
+}
+.footer{
+    text-align: center; /* Texto centrado */
+    background-color: var(--oscuro); /* Fondo oscuro */
+    color: var(--blanco); /* Color de texto blanco */
+    padding: 2rem; /* Relleno interno */
+    font-size: 2rem; /* Tamaño de fuente */
+}
